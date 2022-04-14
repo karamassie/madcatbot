@@ -35,9 +35,14 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
     // Call chat.postMessage with the built-in client
     const result = await client.chat.postMessage({
       channel: welcomeChannelId,
-      text: "_a cat eyes the new human suspiciously_"
+      text: `_eyes <@${event.user}> suspiciously_`
     });
+
+
+
+    
     logger.info(result);
+    logger.info(event)
   }
   catch (error) {
     logger.error(error);
@@ -45,21 +50,8 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 });
 
 
-// ID of the channel you want to send the message to
-const channelId = "C039E59328Y";
 
-try {
-  // Call the chat.postMessage method using the WebClient
-  const result = await client.chat.postMessage({
-    channel: channelId,
-    text: "_a cat sheds_"
-  });
 
-  console.log(result);
-}
-catch (error) {
-  console.error(error);
-}
 
 (async () => {
   // Start your app
