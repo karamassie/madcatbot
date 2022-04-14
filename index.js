@@ -27,26 +27,51 @@ app.message('chicken', async ({ message, say }) => {
   await say(`mrow? `);
 });
 
+
 const welcomeChannelId = 'C039E59328Y';
+
 
 // When a user joins the channel, cat reacts
 app.event('member_joined_channel', async ({ event, client, logger }) => {
-  try {
+
+
+  //delay entry message by 5seconds
+  setTimeout(function() {
+    logger.info("cake")
+  }, 5000);
+
+
+
+  // function stateChange(newState) {
+  //     setTimeout(function () {
+  //         if (newState == -1) {
+  //             alert('VIDEO HAS STOPPED');
+  //         }
+  //     }, 5000);
+  // }
+  //randomize what happens when someone joins
+
+  const x = 10 * Math.random()
+  if (x >= 0 && x <= 5) {
+
     // Call chat.postMessage with the built-in client
     const result = await client.chat.postMessage({
       channel: welcomeChannelId,
       text: `_eyes <@${event.user}> suspiciously_`
     });
-
-
-
-    
-    logger.info(result);
-    logger.info(event)
   }
-  catch (error) {
-    logger.error(error);
+
+  if (x > 5 && x <= 10) {
+
+    // Call chat.postMessage with the built-in client
+    const result = await client.chat.postMessage({
+      channel: welcomeChannelId,
+      text: `_is doing a great job of looking like it is ignoring <@${event.user}> _`
+    });
   }
+
+
+
 });
 
 
