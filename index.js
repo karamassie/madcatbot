@@ -53,7 +53,7 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
     if (x >= 0 && x <= 5) {
 
       // Call chat.postMessage with the built-in client
-      const result = await client.chat.postMessage({
+      const result = await app.client.chat.postMessage({
         channel: welcomeChannelId,
         text: `_eyes <@${event.user}> suspiciously_`
       });
@@ -62,7 +62,7 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
     if (x > 5 && x <= 10) {
 
       // Call chat.postMessage with the built-in client
-      const result = await client.chat.postMessage({
+      const result = await app.client.chat.postMessage({
         channel: welcomeChannelId,
         text: `_thinks it is doing a great job of appearing to ignore <@${event.user}> _`
       });
@@ -72,30 +72,14 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 
 });
 
+const randomCatActions = ["_sheds_","_horks up a hairball_","_snores far too loudly for a beast this size_","_stares at a ghost in the corner_","zips after a dustbunny in a blur"]
 
-
-(async () => {
-  // Start your app
-  await app.start();
-
-// ID of the channel you want to send the message to
-const channelId = "C039E59328Y";
-
-try {
-  // Call the chat.postMessage method using the WebClient
-  const result = await client.chat.postMessage({
-    channel: channelId,
-    text: "ssssssssst"
-  });
-
-  console.log(result);
-}
-catch (error) {
-  console.error(error);
-}
+setInterval(async () => {
   
-  console.log('⚡️ Bolt app is running!');
-})();
-
-
-
+   const x = Math.floor(randomCatActions.length * Math.random())
+    
+  const result = await app.client.chat.postMessage({
+    channel: welcomeChannelId,
+    text: randomCatActions[x]
+  });
+}, 1200 * 1000) 
