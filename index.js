@@ -82,4 +82,4 @@ setInterval(async () => {
     channel: welcomeChannelId,
     text: randomCatActions[x]
   });
-}, 1200 * 1000) 
+}, 1200 * 1000)
