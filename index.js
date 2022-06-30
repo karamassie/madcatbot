@@ -42,7 +42,7 @@ app.message('fish', async ({ message, say }) => {
   await say(`GIMME <@${message.user}>!`);
 });
 // Listens to incoming messages that contain "chicken
-app.message('cat', async ({ message, say }) => {
+app.message('a cat', async ({ message, say }) => {
   // say() sends a message to the channel where the event was triggered
   await say(`I AM THAT <@${message.user}>!`);
 });
@@ -137,9 +137,39 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 //
 // const members = app.client.conversations.members
 
+  // if user id speaks, then respond
+app.message(async ({ message, say }) => {
+  if (message.user == "U032A2PMSE9" && channel.Id == "C039E59328Y") {
+
+    await say(`_bats 8ball away_`); }
+});
+
+app.message(async ({ message, say }) => {
+  if (message.user == "U03LKGUPC57" && channel.Id == "C039E59328Y") {
+
+    await say(`NO BUNNIES!`); }
+});
+
+app.message(async ({ message, say }) => {
+  if (message.user == "U026WC4UXPF" && channel.Id == "C039E59328Y") {
+
+    await say(`HSSSSSS!`); }
+});
+
+app.message(async ({ message, say }) => {
+  if (message.user == "U013B6CPV62" && channel.Id == "C039E59328Y") {
+
+    await say(`WHAT!`); }
+});
 
 
-const randomCatActions = ["_sheds_","_chitters at birds_","_gets underfoot_","_ninjas behind corners_","_silently releases gas from the depths of hell_","_hides from the VACK OOM_","_barges the bathroom door open_","_streeeeeeetches_","_YOWLS for snax_","_is generally unamused_","_flicks its tail indignantly_","_yoga-poses to clean itself while keeping one keen eye on everyone in The Litter Box_","_attacks a hairtie it found under the sofa_","_bleps_","_horks up a hairball_","_snores far too loudly for a beast this size_","_clogs laptop fans with hairs_","_stares at a pixie in the corner_","_judges_","_blurs after a dustbunny_", "_cautiously approaches Ella_","_STOMPS_","_stares woefully at its empty dish_","_parkours over Caleb's laptop_"]
+app.message(async ({ message, say }) => {
+  if (message.user == "U032A2PMSE9" && channel.Id == "C039E59328Y") {
+
+    await say(`YUCK!`); }
+});
+
+const randomCatActions = ["_pretends not to like celeste_","_sheds_","_is looking for @jessicard's sneakers_","_clogs the laptop fan with ha*0+ir#LQ#@)FKDAs_","_longs to go out_","_stares at a pixie in the corner_","_judges_","_blurs after a dustbunny_", "_rubs against @ella's bike_","_STOMPS_","_stares woefully at its empty dish_","_was last seen hanging by its claws from a curtain_","_stares at @hugo while they're sleeping_","_scowls at The World_","_lies on important papers_","_is definitely hiding from @yeetmeh_","_trails litter everywhere_","_parkours over Caleb's laptop_","_sheds_","_is hiding under the sofa_","_is sleeping on Jacob's jacket_"]
 
 setInterval(async () => {
 console.log('check if randomness is running');
