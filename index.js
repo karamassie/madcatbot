@@ -25,77 +25,57 @@ app.message('kitty kitty kitty', async ({ message, say }) => {
   await say(`WHAT <@${message.user}>!`);
 });
 
-// Listens to incoming messages that contain "pss pss pss
-
 app.message('pss pss pss', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`WHAT <@${message.user}>!`);
 });
-// Listens to incoming messages that contain "chicken
+
 app.message('chicken', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`mrow? `);
 });
-// Listens to incoming messages that contain "chicken
+
 app.message('fish', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`GIMME <@${message.user}>!`);
 });
-// Listens to incoming messages that contain "chicken
+
 app.message('a cat', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`I AM THAT <@${message.user}>!`);
 });
 
 app.message('@ cat', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`I AM @THAT <@${message.user}>!`);
 });
 
-// Listens to incoming messages that contain "meow
 app.message('meow', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`_peers out from under the channel to look suspiciously at <@${message.user}>_`);
 });
 
-// Listens to incoming messages that contain "kitty kitty kitty
 app.message('beckons', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say('_faces the other direction_');
 });
 
-// Listens to incoming messages that contain "kitty kitty kitty
 app.message('dog', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say('_zooms away_');
 });
 
-// Listens to incoming messages that contain "kitty kitty kitty
 app.message('woof', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say('_skirts away_');
 });
 
-// Listens to incoming messages that contain "kitty kitty kitty
+
 app.message('calls', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`_turns away from <@${message.user}>_`);
 });
 
-// Listens to incoming messages that contain "kitty kitty kitty
+
 app.message('pet', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`HSSSSS <@${message.user}>!`);
 });
-// Listens to incoming messages that contain "kitty kitty kitty
+
 app.message('bug', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
   await say(`BUG?! _leaps, snatches, snaps, cronches, swallows_`);
 });
 
-// Listens to incoming messages that contain "kitty kitty kitty
-app.message('WHY?', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
+app.message('WHY', async ({ message, say }) => {
   await say('I AM WHY');
 });
 
@@ -146,7 +126,7 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 
 
 //const channel = 'C039E59328Y';
-
+//responds to any messages from a given user
 
 app.message(async ({ message, say }) => {
   if (message.user == "U01D6FYHLUW" && message.channel == "C039E59328Y") {
@@ -190,6 +170,8 @@ app.message(async ({ message, say }) => {
     await say(`WOOF ???`); }
 });
 
+//random actions at set intervals in channel
+
 const randomCatActions = ["_is sleep-nodding, but never sleeping_", "_grumps_", "_sighs_", "_eyes a pair of trousers it wants to poke holes in_", "_perches on a windowsill_", "_leaves a cat-hair donut-stain on a fancy cushion_", "_follows @ella around, but at a safe distance_", "_begs to go outside_", "_is deeply suspicious of other channels_", "_lives in a constant state of ennui_", "_jumps at a shadow that moved_", "_narrows its eyes at @caleb_", "_overeats_" , "_leaves pockmarks in zach's favorite chair_", "_flops on its side in exasperation_","_longs for @celeste_", "_scratched o  the  .  key_", "_is suspiciously cute_", "_eyes @ishan's cheese_","_flexes its claws while yawning_", "_stays clear of rolling office chairs_"]
 
 //const randomCatActions = ["_pretends not to like celeste_","_sheds_","_supermans on the cool tiles_","_clogs the laptop fan with ha*0+ir#LQ#@)FKDAs_","_longs to go out_","_stares at a pixie in the corner_","_judges_","_blurs after a dustbunny_", "_rubs against @ella's bike_","_STOMPS_","_stares woefully at its empty dish_","_was last seen hanging by its claws from a curtain_","_stares at @hugo while they're sleeping_","_scowls at The World_","_lies on important papers_","_snores far too loudly for a cat its size_","_trails litter everywhere_","_parkours over Caleb's laptop_","_sheds_","_is hiding under the sofa_","_is sleeping on Jacob's jacket_"]
@@ -199,7 +181,7 @@ console.log('check if randomness is running');
    const x = Math.floor(randomCatActions.length * Math.random())
 
   const result = await app.client.chat.postMessage({
-    channel: welcomeChannelId,
+    channel: welcomeChannelIds[Math.floor(Math.random()*welcomeChannelIds.length)],
     text: randomCatActions[x]
   });
 }, 2000 * 1000);
