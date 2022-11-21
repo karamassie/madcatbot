@@ -30,7 +30,7 @@ app.message('pss pss pss', async ({ message, say }) => {
 });
 
 app.message('chicken', async ({ message, say }) => {
-  await say(`mrow? `);
+  await say(`CHICKEN!`);
 });
 
 app.message('fish', async ({ message, say }) => {
@@ -81,7 +81,17 @@ app.message('WHY', async ({ message, say }) => {
 
 //const welcomeChannelId = 'C039E59328Y';
 
-const welcomeChannelIds=('C039E59328Y', 'C04207S1PQX');
+const theLitterBox = 'C039E59328Y'
+const numerology = 'C04207S1PQX'
+
+const randomChannel = () => {
+  const n = Math.random()
+  if (n > 0.005) {
+    return theLitterBox
+  } else {
+    return numerology
+  }
+}
 
 // When a user joins the channel, cat reacts
 app.event('member_joined_channel', async ({ event, client, logger }) => {
@@ -97,7 +107,7 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 
       // Call chat.postMessage with the built-in client
       const result = await app.client.chat.postMessage({
-        channel: welcomeChannelId,
+        channel: event.channel,
         text: `_eyes <@${event.user}> suspiciously_`
       });
     }
@@ -106,7 +116,7 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 
       // Call chat.postMessage with the built-in client
       const result = await app.client.chat.postMessage({
-        channel: welcomeChannelId,
+        channel: event.channel,
         text: `_hears <@${event.user}> enter, and peeks out from behind claw-pocked curtains_`
       });
     }
@@ -115,7 +125,7 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 
       // Call chat.postMessage with the built-in client
       const result = await app.client.chat.postMessage({
-        channel: welcomeChannelId,
+        channel: event.channel,
         text: `_might be a figment of <@${event.user}>'s imagination_`
       });
     }
@@ -129,50 +139,56 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 //responds to any messages from a given user
 
 app.message(async ({ message, say }) => {
-  if (message.user == "U01D6FYHLUW" && message.channel == "C039E59328Y") {
+  if (message.user == "U01D6FYHLUW" && message.channel == theLitterBox) {
 
     await say(`niaaaw? <@${message.user}>`); }
 });
 
 app.message(async ({ message, say }) => {
-  if (message.user == "U013B6CPV62" && message.channel == "C039E59328Y") {
+  if (message.user == "U013B6CPV62" && message.channel == theLitterBox) {
 
     await say(`pffffft <@${message.user}>!`); }
 });
 
 app.message(async ({ message, say }) => {
-  if (message.user == "U02KYLBLKR9" && message.channel == "C039E59328Y") {
+  if (message.user == "U02KYLBLKR9" && message.channel == theLitterBox) {
 
     await say(`_bats 8-ball <@${message.user}>_`); }
 });
 
 app.message(async ({ message, say }) => {
-  if (message.user == "U015VNG4KU4" && message.channel == "C039E59328Y") {
+  if (message.user == "U015VNG4KU4" && message.channel == theLitterBox) {
 
     await say(`WHY <@${message.user}>!`); }
 });
 
 app.message(async ({ message, say }) => {
-  if (message.user == "U01ACA3M90C" && message.channel == "C039E59328Y") {
+  if (message.user == "U01ACA3M90C" && message.channel == theLitterBox) {
 
     await say(`CHEESE!`); }
 });
 
 app.message(async ({ message, say }) => {
-  if (message.user == "U042HD447LL" && message.channel == "C04207S1PQX") {
+  if (message.user == "U019PF0KNE6" && message.channel == theLitterBox) {
+
+    await say(`HUH!`); }
+});
+
+app.message(async ({ message, say }) => {
+  if (message.user == "U042HD447LL" && message.channel == numerology) {
 
     await say(`psssss!`); }
 });
 
 app.message(async ({ message, say }) => {
-  if (message.user == "U032A2PMSE9" && message.channel == "C04207S1PQX") {
+  if (message.user == "U032A2PMSE9" && message.channel == numerology) {
 
     await say(`WOOF ???`); }
 });
 
 //random actions at set intervals in channel
 
-const randomCatActions = ["_is sleep-nodding, but never sleeping_", "_grumps_", "_sighs_", "_eyes a pair of trousers it wants to poke holes in_", "_perches on a windowsill_", "_leaves a cat-hair donut-stain on a fancy cushion_", "_follows @ella around, but at a safe distance_", "_begs to go outside_", "_is deeply suspicious of other channels_", "_lives in a constant state of ennui_", "_jumps at a shadow that moved_", "_narrows its eyes at @caleb_", "_overeats_" , "_leaves pockmarks in zach's favorite chair_", "_flops on its side in exasperation_","_longs for @celeste_", "_scratched o  the  .  key_", "_is suspiciously cute_", "_eyes @ishan's cheese_","_flexes its claws while yawning_", "_stays clear of rolling office chairs_"]
+const randomCatActions = ["_bats at the CNC machine_", "_sniffs @ian's shoes_", "_knocks over the waterbowl_", "_farts, then stares at the dog blamefully_", "_grumps_", "_sighs_", "_eyes a pair of trousers it wants to poke holes in_", "_perches on a windowsill_", "_leaves a cat-hair donut-stain on a fancy cushion_", "_follows @ella around, but at a safe distance_", "_begs to go outside_", "_is deeply suspicious of other channels_", "_lives in a constant state of ennui_", "_jumps at a shadow that moved_", "_narrows its eyes at @caleb_", "_overeats_" , "_leaves pockmarks in zach's favorite chair_", "_flops on its side in exasperation_","_gets under @belle's feet_","_is guided by 5: the claws on its front paw and the number of meals it believes to need each day_","_longs for @celeste_", "_scratched o  the  .  key_", "_is suspiciously cute_", "_eyes @ishan's cheese_","_flexes its claws while yawning_", "_stays clear of rolling office chairs_"]
 
 //const randomCatActions = ["_pretends not to like celeste_","_sheds_","_supermans on the cool tiles_","_clogs the laptop fan with ha*0+ir#LQ#@)FKDAs_","_longs to go out_","_stares at a pixie in the corner_","_judges_","_blurs after a dustbunny_", "_rubs against @ella's bike_","_STOMPS_","_stares woefully at its empty dish_","_was last seen hanging by its claws from a curtain_","_stares at @hugo while they're sleeping_","_scowls at The World_","_lies on important papers_","_snores far too loudly for a cat its size_","_trails litter everywhere_","_parkours over Caleb's laptop_","_sheds_","_is hiding under the sofa_","_is sleeping on Jacob's jacket_"]
 
@@ -181,7 +197,7 @@ console.log('check if randomness is running');
    const x = Math.floor(randomCatActions.length * Math.random())
 
   const result = await app.client.chat.postMessage({
-    channel: welcomeChannelIds[Math.floor(Math.random()*welcomeChannelIds.length)],
+    channel: randomChannel(),
     text: randomCatActions[x]
   });
 }, 2000 * 1000);
