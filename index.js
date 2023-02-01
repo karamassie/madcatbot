@@ -153,10 +153,10 @@ app.message(async ({ message, say }) => {
 app.message(async ({ message, say }) => {
   if (message.user == "UR6P49Q79" && message.channel == theLitterBox) {
 
-  randomMessage();
+  randomMessageL();
 }});
 
-function randomMessage() {
+function randomMessageL() {
   const n = Math.random();
   if (n > 0.5) {
     say('blazers!');
@@ -192,8 +192,17 @@ app.message(async ({ message, say }) => {
 app.message(async ({ message, say }) => {
   if (message.user == "U032A2PMSE9" && message.channel == theLitterBox) {
 
-    await say(`braahhhh`); }
-});
+    randomMessageKara();
+  }});
+
+  function randomMessageKara() {
+    const n = Math.random();
+    if (n > 0.5) {
+      say('sssssssst');
+    } else {
+      say('prrrrrr');
+    }
+  }
 
 //random actions at set intervals in channel
 
