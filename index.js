@@ -153,17 +153,17 @@ app.message(async ({ message, say }) => {
 app.message(async ({ message, say }) => {
   if (message.user == "UR6P49Q79" && message.channel == theLitterBox) {
 
-    await randomMessage(); }
-});
+  randomMessage();
+}});
 
-const randomMessage = () => {
-  const n = Math.random()
+function randomMessage() {
+  const n = Math.random();
   if (n > 0.5) {
-     say('blazers!');
+    say('blazers!');
   } else {
-    say('lazers!')
+    say('lazers!');
   }
-};
+}
 
 app.message(async ({ message, say }) => {
   if (message.user == "U02KYLBLKR9" && message.channel == theLitterBox) {
