@@ -151,17 +151,17 @@ app.message(async ({ message, say }) => {
 });
 
 app.message(async ({ message, say }) => {
-  if (message.user == "UR6P49Q79" && message.channel == theLitterBox) {
+  if (message.user == "U032A2PMSE9" && message.channel == theLitterBox) {
 
-  randomMessageL();
+  await say(randomMessageL)
 }});
 
 function randomMessageL() {
   const n = Math.random();
   if (n > 0.5) {
-    say('blazers!');
+    return('blazers!');
   } else {
-    say('lazers!');
+    return('lazers!');
   }
 }
 
@@ -188,13 +188,13 @@ app.message(async ({ message, say }) => {
 
     await say(`HUH!`); }
 });
-
+/*
 app.message(async ({ message, say }) => {
   if (message.user == "U032A2PMSE9" && message.channel == theLitterBox) {
 
     randomMessageKara();
   }});
-
+*/
   function randomMessageKara() {
     const n = Math.random();
     if (n > 0.5) {
