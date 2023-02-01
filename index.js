@@ -70,7 +70,7 @@ app.message('pet', async ({ message, say }) => {
 });
 
 app.message('bug', async ({ message, say }) => {
-  await say(`BUG?! _leaps, snatches, snaps, cronches, swallows_`);
+  await say(`_leaps, snatches, snaps, cronches, swallows_`);
 });
 
 app.message('WHY', async ({ message, say }) => {
@@ -84,7 +84,7 @@ app.message('WHY', async ({ message, say }) => {
 const theLitterBox = 'C039E59328Y'
 
 
-const randomChannel = () => {
+/*const randomChannel = () => {
   const n = Math.random()
   if (n > 0.001) {
     return theLitterBox
@@ -92,7 +92,7 @@ const randomChannel = () => {
     return numerology
   }
 }
-
+*/
 // When a user joins the channel, cat reacts
 app.event('member_joined_channel', async ({ event, client, logger }) => {
 
@@ -148,6 +148,12 @@ app.message(async ({ message, say }) => {
   if (message.user == "U013B6CPV62" && message.channel == theLitterBox) {
 
     await say(`pffffft <@${message.user}>!`); }
+});
+
+app.message(async ({ message, say }) => {
+  if (message.user == "UR6P49Q79" && message.channel == theLitterBox) {
+
+    await say(`blazers! <@${message.user}>!`); }
 });
 
 app.message(async ({ message, say }) => {
