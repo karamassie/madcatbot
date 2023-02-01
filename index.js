@@ -190,15 +190,9 @@ app.message(async ({ message, say }) => {
 });
 
 app.message(async ({ message, say }) => {
-  if (message.user == "U042HD447LL" && message.channel == numerology) {
+  if (message.user == "U032A2PMSE9" && message.channel == theLitterBox) {
 
-    await say(`psssss!`); }
-});
-
-app.message(async ({ message, say }) => {
-  if (message.user == "U032A2PMSE9" && message.channel == numerology) {
-
-    await say(`WOOF ???`); }
+    await say(`braahhhh`); }
 });
 
 //random actions at set intervals in channel
