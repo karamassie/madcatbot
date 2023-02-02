@@ -47,7 +47,7 @@ app.message('meow', async ({ message, say }) => {
   await say(`_peers out from under the channel to look suspiciously at <@${message.user}>_`);
 });
 
-app.message('beckons', async ({ message, say }) => {
+app.message('looks', async ({ message, say }) => {
   await say('_faces the other direction_');
 });
 
@@ -150,7 +150,7 @@ app.message(async ({ message, say }) => {
     await say(`pffffft <@${message.user}>!`); }
 });
 
-app.message(async ({ message, say }) => {
+/*app.message(async ({ message, say }) => {
   if (message.user == "U032A2PMSE9" && message.channel == theLitterBox) {
 
   await say(randomMessageL)
@@ -164,7 +164,7 @@ function randomMessageL() {
     return('lazers!');
   }
 }
-
+*/
 app.message(async ({ message, say }) => {
   if (message.user == "U02KYLBLKR9" && message.channel == theLitterBox) {
 
@@ -194,7 +194,7 @@ app.message(async ({ message, say }) => {
 
     randomMessageKara();
   }});
-*/
+
   function randomMessageKara() {
     const n = Math.random();
     if (n > 0.5) {
@@ -203,7 +203,7 @@ app.message(async ({ message, say }) => {
       say('prrrrrr');
     }
   }
-
+  */
 //random actions at set intervals in channel
 
 const randomCatActions = ["_bats at the CNC machine_", "_sniffs @ian's shoes_", "_knocks over the waterbowl_", "_farts, then stares at the dog blamefully_", "_grumps_", "_sighs_", "_eyes a pair of trousers it wants to poke holes in_", "_perches on a windowsill_", "_leaves a cat-hair donut-stain on a fancy cushion_", "_follows @ella around, but at a safe distance_", "_begs to go outside_", "_is deeply suspicious of other channels_", "_lives in a constant state of ennui_", "_jumps at a shadow that moved_", "_narrows its eyes at @caleb_", "_overeats_" , "_leaves pockmarks in zach's favorite chair_", "_flops on its side in exasperation_","_gets under @belle's feet_","_is guided by 5: the claws on its front paw and the number of meals it believes to need each day_","_leggos @sampoder's eggos_", "_scratched o  the  .  key_", "_is suspiciously cute_", "_eyes @ishan's cheese_","_flexes its claws while yawning_", "_stays clear of rolling office chairs_"]
