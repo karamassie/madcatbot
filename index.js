@@ -14,9 +14,6 @@ const app = new App({
 
 
 
-
-
-
 // Listens to incoming messages that contain "kitty kitty kitty
 app.message('kitty kitty kitty', async ({ message, say }) => {
   // say() sends a message to the channel where the event was triggered
@@ -82,17 +79,17 @@ app.message('WHY', async ({ message, say }) => {
 
 
 const theLitterBox = 'C039E59328Y'
+const botsmapforHorses = 'C043S9B1Z4Z'
 
-
-/*const randomChannel = () => {
+const randomChannel = () => {
   const n = Math.random()
-  if (n > 0.001) {
+  if (n > 0.0001) {
     return theLitterBox
   } else {
-    return numerology
+    return botsmapforHorses
   }
 }
-*/
+
 // When a user joins the channel, cat reacts
 app.event('member_joined_channel', async ({ event, client, logger }) => {
 
@@ -107,8 +104,8 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 
       // Call chat.postMessage with the built-in client
       const result = await app.client.chat.postMessage({
-        channel: event.channel,
-        text: `_eyes <@${event.user}> suspiciously_`
+        channel: theLitterBox,
+        text: `_eyes <@${event.user}> with interest_`
       });
     }
 
@@ -116,7 +113,7 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 
       // Call chat.postMessage with the built-in client
       const result = await app.client.chat.postMessage({
-        channel: event.channel,
+        channel: theLitterBox,
         text: `_hears <@${event.user}> enter, and peeks out from behind claw-pocked curtains_`
       });
     }
@@ -125,8 +122,8 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
 
       // Call chat.postMessage with the built-in client
       const result = await app.client.chat.postMessage({
-        channel: event.channel,
-        text: `_might be a figment of <@${event.user}>'s imagination_`
+        channel: theLitterbox,
+        text: `_pads over to greet <@${event.user}>_`
       });
     }
 
@@ -153,8 +150,8 @@ app.message(async ({ message, say }) => {
 /*app.message(async ({ message, say }) => {
   if (message.user == "U032A2PMSE9" && message.channel == theLitterBox) {
 
-  await say(randomMessageL)
-}});
+  await say(randomMessageL)}
+});
 
 function randomMessageL() {
   const n = Math.random();
@@ -218,7 +215,7 @@ console.log('check if randomness is running');
     channel: randomChannel(),
     text: randomCatActions[x]
   });
-}, 1000 * 1000);
+}, 1000 * 4000);
 
 (async () => {
   await app.start();
