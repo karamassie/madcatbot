@@ -1,6 +1,8 @@
 console.log("wassup")
 const { App } = require('@slack/bolt');
 const { APP } = require('dotenv').config()
+const { listUsers } = require('./database')
+listUsers()
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -10,8 +12,6 @@ const app = new App({
   // you still need to listen on some port!
   port: process.env.PORT || 3000
 });
-
-
 
 
 // Listens to incoming messages that contain "kitty kitty kitty
@@ -48,6 +48,10 @@ app.message('looks', async ({ message, say }) => {
   await say('_faces the other direction_');
 });
 
+app.message('bird', async ({ message, say }) => {
+  await say('krkkk krrkk krrrrk ssssst kkrrrk');
+});
+
 app.message('dog', async ({ message, say }) => {
   await say('_zooms away_');
 });
@@ -72,6 +76,14 @@ app.message('bug', async ({ message, say }) => {
 
 app.message('WHY', async ({ message, say }) => {
   await say('I AM WHY');
+});
+
+app.message('MEOW', async ({ message, say }) => {
+  await say('MEOW?');
+});
+
+app.message('nice', async ({ message, say }) => {
+  await say(`WHAT <@${message.user}>!`);
 });
 
 //const welcomeChannelId = 'C039E59328Y';
@@ -118,6 +130,8 @@ app.event('member_joined_channel', async ({ event, client, logger }) => {
       });
     }
 
+
+    
     if (x > 7 && x <= 10) {
 
       // Call chat.postMessage with the built-in client
@@ -142,9 +156,27 @@ app.message(async ({ message, say }) => {
 });
 
 app.message(async ({ message, say }) => {
+  if (message.user == "UU01MPHKFZ7S" && message.channel == theLitterBox) {
+
+    await say(`_skitters_ <@${message.user}>!`); }
+});
+
+app.message(async ({ message, say }) => {
   if (message.user == "U013B6CPV62" && message.channel == theLitterBox) {
 
     await say(`pffffft <@${message.user}>!`); }
+});
+
+app.message(async ({ message, say }) => {
+  if (message.user == "U02A67DA1QX" && message.channel == theLitterBox) {
+
+    await say(`WHAT NOW <@${message.user}>!`); }
+});
+
+app.message(async ({ message, say }) => {
+  if (message.user == "U04R0ETKQTZ" && message.channel == theLitterBox) {
+
+    await say(`rrrrRrrrrrRrrr<@${message.user}>!`); }
 });
 
 /*app.message(async ({ message, say }) => {
@@ -185,6 +217,7 @@ app.message(async ({ message, say }) => {
 
     await say(`HUH!`); }
 });
+
 /*
 app.message(async ({ message, say }) => {
   if (message.user == "U032A2PMSE9" && message.channel == theLitterBox) {
@@ -201,11 +234,7 @@ app.message(async ({ message, say }) => {
     }
   }
   */
-//random actions at set intervals in channel
-
-const randomCatActions = ["_bats at the CNC machine_", "_sniffs @ian's shoes_", "_knocks over the waterbowl_", "_farts, then stares at the dog blamefully_", "_grumps_", "_sighs_", "_eyes a pair of trousers it wants to poke holes in_", "_perches on a windowsill_", "_leaves a cat-hair donut-stain on a fancy cushion_", "_follows @ella around, but at a safe distance_", "_begs to go outside_", "_is deeply suspicious of other channels_", "_lives in a constant state of ennui_", "_jumps at a shadow that moved_", "_narrows its eyes at @caleb_", "_overeats_" , "_leaves pockmarks in zach's favorite chair_", "_flops on its side in exasperation_","_gets under @belle's feet_","_is guided by 5: the claws on its front paw and the number of meals it believes to need each day_","_leggos @sampoder's eggos_", "_scratched o  the  .  key_", "_is suspiciously cute_", "_eyes @ishan's cheese_","_flexes its claws while yawning_", "_stays clear of rolling office chairs_"]
-
-//const randomCatActions = ["_pretends not to like celeste_","_sheds_","_supermans on the cool tiles_","_clogs the laptop fan with ha*0+ir#LQ#@)FKDAs_","_longs to go out_","_stares at a pixie in the corner_","_judges_","_blurs after a dustbunny_", "_rubs against @ella's bike_","_STOMPS_","_stares woefully at its empty dish_","_was last seen hanging by its claws from a curtain_","_stares at @hugo while they're sleeping_","_scowls at The World_","_lies on important papers_","_snores far too loudly for a cat its size_","_trails litter everywhere_","_parkours over Caleb's laptop_","_sheds_","_is hiding under the sofa_","_is sleeping on Jacob's jacket_"]
+const randomCatActions = ["_bats at the BLOT_", "_keeps itself exactly 8m from @sbf at all times_", "_scares itself with its own fart_", "_bleps_", "_camoflages on laptop bags_", "_yowls at @cytronicoder_", "_scratches the wall at 4am_", "_follows @marios around, getting underfoot_", "_begs to go outside_", "_is deeply suspicious of other channels_", "_lives in a constant state of ennui_", "_jumps at a shadow that moved_", "_narrows its eyes at @caleb_", "_overeats_", "_sleeps on warm laundry_", "_flops on its side in exasperation_", "_gets under @aarya's feet_", "violates the code of conduct", "horks up a hairball in the middle of the channel","_is guided by 5: the claws on its front paw and the number of meals it believes to need each day_", "_leggos @sampoder's eggos_", "_scratched o  the  .  key_", "_is suspiciously cute_", "_skulks in the closet_","_flexes its claws while yawning_", "_zoom-bombs important meetings_", "_stays clear of rolling office chairs_", "_begs to go out and then won't leave the doorway_"]
 
 setInterval(async () => {
 console.log('check if randomness is running');
